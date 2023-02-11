@@ -45,7 +45,7 @@ class AuthController extends GetxController {
 
       _box.write(MyIAKeys.userStatus, true);
 
-      Get.offAll(() => const HomeScreen());
+      Get.offAll(() => HomeScreen());
       Utils.showSnackBar('Login Successful!', status: true);
       //
     } on FirebaseAuthException catch (e) {
@@ -67,6 +67,7 @@ class AuthController extends GetxController {
       //
       await GoogleSignIn().signOut();
       _box.write(MyIAKeys.userStatus, false);
+      _box.write(MyIAKeys.userType, '');
       Get.offAll(() => SigninScreen());
       //
     } catch (e) {

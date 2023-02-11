@@ -2,25 +2,25 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:greenland/core/helpers/my_helper.dart';
 import 'package:greenland/core/utilities/utils.dart';
 
 import '../../../core/constants/my_constants.dart';
 import '../../../core/themes/my_colors.dart';
 import '../../../core/themes/my_textstyles.dart';
 import '../../main.dart';
+import '../../modules/auth/auth_controller.dart';
 
 class MyDrawer extends StatelessWidget {
   MyDrawer({super.key});
 
-  // final authController = Get.put(AuthController());
+  final authController = Get.put(AuthController());
 
   String get name => auth.currentUser!.displayName ?? 'Guest User';
 
   String get email => auth.currentUser!.email ?? '';
 
-  String get imageUrl =>
-      auth.currentUser!.photoURL ??
-      'https://img.freepik.com/premium-psd/3d-cartoon-avatar-smiling-man_1020-5130.jpg?size=338&ext=jpg&uid=R65626931&ga=GA1.2.1025021015.1655558182&semt=sph';
+  String get imageUrl => auth.currentUser!.photoURL ?? MyHelper.profilePic;
 
   primary() => isDark.value ? MyColors.lightPurple : MyColors.pink;
 
@@ -70,12 +70,14 @@ class MyDrawer extends StatelessWidget {
               ),
               const SizedBox(height: 15),
               // ----------------------- name
-              Text(
-                name,
-                overflow: TextOverflow.clip,
-                maxLines: 1,
-                style: MyTStyles.kTS18Medium.copyWith(
-                    color: isDark.value ? MyColors.wheat : MyColors.darkPink),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: Text(
+                  name,
+                  style: MyTStyles.kTS18Medium.copyWith(
+                      color: isDark.value ? MyColors.wheat : MyColors.darkPink),
+                  textAlign: TextAlign.center,
+                ),
               ),
               // ----------------------- email
               Text(
@@ -172,8 +174,7 @@ class MyDrawer extends StatelessWidget {
                 onTap: () => Utils.confirmDialogBox(
                   'Wanna Logout?',
                   'Hey you\'d have stayed a little longer and written some more journals...',
-                  // yesFun: authController.logout,
-                  yesFun: () {},
+                  yesFun: authController.logout,
                 ),
                 child: Container(
                   height: 45,

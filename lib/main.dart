@@ -24,7 +24,7 @@ void main() async {
 
   if (authController.isUserPresent && auth.currentUser != null) {
     log('======================== USER ID : ${auth.currentUser!.uid}');
-    runApp(const MyApp(HomeScreen()));
+    runApp(MyApp(HomeScreen()));
     return;
   }
 

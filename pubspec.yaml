@@ -20,12 +20,21 @@ dependencies:
   firebase_core: ^2.1.1
   firebase_auth: ^4.1.0
   cloud_firestore: ^4.0.3
-  # firebase_storage: ^11.0.8
+  firebase_storage: ^11.0.8
   google_sign_in: ^5.4.2
   google_fonts: ^3.0.1
   shared_preferences: ^2.0.15
   get_storage: ^2.0.3
   intl: ^0.17.0
+  font_awesome_flutter: ^10.4.0
+
+  geolocator: ^9.0.2
+  url_launcher: ^6.1.7
+  geocoding: ^2.0.5
+  image_picker: ^0.8.6
+  flutter_phone_direct_caller: ^2.1.1
+  webview_flutter: ^4.0.2
+  carousel_slider: ^4.2.1
 
   # file_picker: ^4.6.1
   # open_file: ^3.2.1

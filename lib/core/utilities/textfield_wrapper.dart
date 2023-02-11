@@ -10,6 +10,10 @@ class TextFieldWrapper extends StatelessWidget {
   final IconData? icon;
   final double? bottomPad;
 
+  primary(int a) => Get.isDarkMode
+      ? MyColors.lightPurple.withAlpha(a)
+      : MyColors.pink.withAlpha(a);
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -17,7 +21,7 @@ class TextFieldWrapper extends StatelessWidget {
       child: Ink(
         padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 13),
         decoration: BoxDecoration(
-          color: Get.isDarkMode ? MyColors.darkPurple : MyColors.lightPink,
+          color: primary(25),
           borderRadius: BorderRadius.circular(8),
         ),
         child: Row(

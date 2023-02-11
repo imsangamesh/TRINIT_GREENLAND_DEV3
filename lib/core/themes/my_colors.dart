@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class MyColors {
   static const white = Colors.white;
@@ -20,18 +21,22 @@ class MyColors {
 
   /// ------------------------------------------------------ `dark theme`
   static const darkScaffoldBG = Color(0xFF03071B);
-  static const darkListTile = Color(0xFF230F32);
+  static final darkListTile = const Color(0xffBA94D1).withAlpha(25);
 
   /// ------------------------------------------------------ `dark`
   static const darkPink = Color(0xffde004a);
   static const lightPurple = Color(0xffBA94D1);
-  static const darkPurple = Color(0xFF442C4F);
+  static final darkPurple = const Color(0xffBA94D1).withAlpha(25);
 
   // static const darkBlue = Color(0xffC060A1);
   // static const darkBlue = Color.fromARGB(255, 76, 46, 95);
 
   /// ------------------------------------------------------ `intermediate`
   static const interPink = Color(0xFFEC407A);
+
+  static primary(int a) => Get.isDarkMode
+      ? MyColors.lightPurple.withAlpha(a)
+      : MyColors.pink.withAlpha(a);
 }
 
 // 1 playfairDisplay

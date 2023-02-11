@@ -23,6 +23,12 @@ class MyThemes {
       )),
       centerTitle: true,
     ),
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      backgroundColor: MyColors.lightScaffoldBG,
+    ),
+    bottomSheetTheme: const BottomSheetThemeData(
+      backgroundColor: MyColors.lightScaffoldBG,
+    ),
     listTileTheme: ListTileThemeData(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       tileColor: MyColors.lightListTile,
@@ -60,6 +66,12 @@ class MyThemes {
         ),
       ),
       centerTitle: true,
+    ),
+    bottomSheetTheme: const BottomSheetThemeData(
+      backgroundColor: MyColors.darkScaffoldBG,
+    ),
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      backgroundColor: MyColors.darkScaffoldBG,
     ),
     listTileTheme: ListTileThemeData(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
